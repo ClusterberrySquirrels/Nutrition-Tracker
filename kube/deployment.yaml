@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nutritiontracker
+  namespace: nutritiontracker
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nutritiontracker
+  template:
+    metadata:
+      labels:
+        app: nutritiontracker
+    spec:
+      containers:
+      - name: nutritiontracker
+        image: noahlaratta/nutritiontracker:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
