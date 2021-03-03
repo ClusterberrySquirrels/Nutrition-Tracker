@@ -3,7 +3,7 @@ FROM python:3
 MAINTAINER Noah Laratta "noahlaratta@gmail.com"
 
 ENV PYTHONDONTWRITEBYTECODE 1
-ENV FLASK_APP "app.py"
+ENV FLASK_APP "__init__.py"
 ENV FLASK_ENV "development"
 ENV FLASK_DEBUG true
 

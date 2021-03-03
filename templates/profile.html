@@ -13,24 +13,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
-<body style="min-height: 500px;height: 500px;">
+<body>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
         <div class="container"><a class="navbar-brand" href="#">Nutrition Tracker</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('main.index') }}">About</a></li>
-                </ul><span class="navbar-text actions"> <a class="login" href="{{ url_for('auth.login') }}">Log In</a><a class="btn btn-light action-button" role="button" href="{{ url_for('auth.signup') }}">Sign Up</a></span>
+                    <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+                </ul>
+                <div class="dropdown show"><a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#">{{ name }}</a>
+                    <div class="dropdown-menu show"><a class="dropdown-item" href="#">Edit profile</a><a class="dropdown-item" href="{{ url_for('auth.logout') }}">Sign out</a></div>
+                </div>
             </div>
         </div>
     </nav>
-    <section class="highlight-clean">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Eat consciously.</h2>
-            </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="{{ url_for('auth.signup') }}">Sign up</a><a class="btn btn-light" role="button" href="{{ url_for('auth.login') }}">Log in</a></div>
-        </div>
-    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/js/bootstrap.bundle.min.js"></script>
 </body>
 
