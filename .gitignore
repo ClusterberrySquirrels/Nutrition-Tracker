@@ -3,5 +3,6 @@
 **/.iml
 **/21SCS3810
 **/__pycache__
+**/env
 **__init__.pyc
 **__init__.py.*

@@ -30,11 +30,12 @@ An alternative, and somewhat easier, way to run the server is to build and run a
 
 From the project directory, run this command to build the image:
 
-    docker build -t nutritiontracker
+    docker build -t cberrys2021/nutritiontracker:<tag> .
+    #Replace tag with the version you're uploading
 
 Run this command to run the image:
 
-    docker run -dp 5000:5000 nutritiontracker
+    docker run -dp 5000:5000 cberrys2021/nutritiontracker:<tag>
 
 To confirm that the image is running:
 
