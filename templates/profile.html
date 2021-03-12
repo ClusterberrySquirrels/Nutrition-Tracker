@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Nutrition Tracker 2</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Highlight-Clean.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login-Form-Clean.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Navigation-with-Button.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Registration-Form-with-Photo.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
+{% block content %}
+{% endblock %}
 
-<body>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-        <div class="container"><a class="navbar-brand" href="#">Nutrition Tracker</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
-                </ul>
-                <div class="dropdown show"><a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#">{{ name }}</a>
-                    <div class="dropdown-menu show"><a class="dropdown-item" href="#">Edit profile</a><a class="dropdown-item" href="{{ url_for('auth.logout') }}">Sign out</a></div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
