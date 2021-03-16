@@ -4,6 +4,7 @@ Flask-SQLAlchemy
 Flask-Bootstrap
 Flask-Moment
 Flask-WTF
+Flask-Testing
 pytest
-codecov
+pytest-cov
 pip
