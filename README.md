@@ -30,7 +30,7 @@ Disable Flask debug mode
 
 Run pytest with coverage
 
-    pytest -cov=NutritionTracker
+    pytest --cov=NutritionTracker
 
 Then go to your navigation browser of your choice and enter 
 the following URL: http://127.0.0.1:5000/
