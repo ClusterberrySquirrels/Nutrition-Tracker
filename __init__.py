@@ -25,12 +25,13 @@ from flask_login import (
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
-#from flask_wtf import FlaskForm
-#from wtforms import StringField, SubmitField, BooleanField, PasswordField, validators
-#from wtforms.validators import DataRequired
+
+# from flask_wtf import FlaskForm
+# from wtforms import StringField, SubmitField, BooleanField, PasswordField, validators
+# from wtforms.validators import DataRequired
 
 # define user model in the database
-#class SignupForm(Form):
+# class SignupForm(Form):
 #    username = StringField('Username', [validators.DataRequired()])
 #    name = StringField('Name', [validators.DataRequired()])
 #    email = StringField('Email Address', [validators.DataRequired(),
@@ -42,6 +43,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 # Config
 db = SQLAlchemy()
+
 
 def create_app():
     app = Flask(__name__)
@@ -58,11 +60,11 @@ def create_app():
 
     from .models import User
 
-    #auth route blueprints
+    # auth route blueprints
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
 
-    #non-auth route blueprints
+    # non-auth route blueprints
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
@@ -71,4 +73,6 @@ def create_app():
         return User.query.get(int(user_id))
 
     return app
+
+
 

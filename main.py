@@ -1,8 +1,8 @@
-from flask import Blueprint, render_template
+from flask import render_template
 from flask_login import login_required, current_user
 from . import db
 
-main = Blueprint('main', __name__)
+# main = Blueprint('main', __name__)
 
 
 @main.route('/')
@@ -29,3 +29,6 @@ def internal_server_error(e):
 @main.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
+
+

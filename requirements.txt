@@ -3,7 +3,10 @@ Flask-Login
 Flask-SQLAlchemy
 Flask-Bootstrap
 Flask-Moment
+Flask-Testing
 Flask-WTF
 pytest
 codecov
 pip
+ext
+blueprint
