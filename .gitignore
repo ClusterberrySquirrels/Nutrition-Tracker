@@ -1,6 +1,7 @@
 **/.DS_Store
 **/.idea
 **/.iml
+**/.pytest_cache
 **/21SCS3810
 **/__pycache__
 **/env
