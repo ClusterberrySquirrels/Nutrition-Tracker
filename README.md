@@ -11,16 +11,26 @@ From outside the project folder, create and activate the virtual Python environm
 
     python3 -m venv env
     source env/bin/activate
-    pip install flask flask-sqlalchemy flask-login flask-moment flask-bootstrap flask-wtf
+    pip install -r requirements.txt
 
 Run the follwing command to set your environment variables for the Flask app:
 
-    export FLASK_APP=nutritiontracker
+    export FLASK_APP=NutritionTracker
     export FLASK_DEBUG=1
 
 Run the program
 
     flask run
+
+# Running Tests
+
+Disable Flask debug mode
+
+    export FLASK_DEBUG=0
+
+Run pytest with coverage
+
+    pytest --cov=NutritionTracker
 
 Then go to your navigation browser of your choice and enter 
 the following URL: http://127.0.0.1:5000/
