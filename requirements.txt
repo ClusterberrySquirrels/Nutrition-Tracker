@@ -1,6 +1,7 @@
 Flask
 Flask-Login
 Flask-SQLAlchemy
+SQLAlchemy==1.3.23
 Flask-Bootstrap
 Flask-Moment
 Flask-WTF
