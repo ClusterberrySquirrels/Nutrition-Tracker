@@ -1,5 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if current_user.is_authenticated %}
+<div style="text-align: center;">
+    <a class="btn btn-primary" role="button" href="{{ url_for('main.create_meal') }}" style="background: rgb(60,218,5);">Add Meal</a>
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Meal</th>
+                <th>Date entered</th>
+                <th>Calories</th>
+                <th>Carbs (g)</th>
+                <th>Fat (g)</th>
+                <th>Protein (g)</th>
+            </tr>
+        </thead>
+        {% for meal in meals %}
+        <tbody>
+            <tr>
+                <td>{{ meal.name }}</td>
+                <td>{{ meal.creation_date }}</td>
+                <td>{{ meal.calories }}</td>
+                <td>{{ meal.carbs }}</td>
+                <td>{{ meal.fat }}</td>
+                <td>{{ meal.protein }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endif %}
 {% endblock %}
 
