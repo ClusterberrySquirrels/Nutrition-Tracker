@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<form method="post">
+    <h2 class="text-center">Enter a meal</h2>
+    <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Name" /></div>
+    <div style="margin: 0px 0px 16px;">
+        <div class="row">
+            <div class="col"><input type="text" class="form-control" name="carbs" placeholder="Carbs (g)" /></div>
+            <div class="col"><input type="text" class="form-control" name="fat" placeholder="Fat (g)" /></div>
+            <div class="col"><input type="text" class="form-control" name="protein" placeholder="Protein (g)" /></div>
+        </div>
+    </div>
+    <div class="mb-3"><input type="text" class="form-control" name="calories" placeholder="Calories" /></div>
+    <div class="mb-3"><button class="btn btn-primary" type="submit">send </button></div>
+</form>
+{% endif %}
+{% endblock %}
+

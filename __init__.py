@@ -42,13 +42,13 @@ from flask_sqlalchemy import SQLAlchemy
 
 # Config
 db = SQLAlchemy()
-
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = os.urandom(24)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
     moment = Moment(app)
     bootstrap = Bootstrap(app)
+    db = SQLAlchemy(app)
 
     # setup Flask-Login, initialize db
     db.init_app(app)
@@ -56,7 +56,7 @@ def create_app():
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
 
-    from .models import User
+    from .models import User, Meal
 
     #auth route blueprints
     from .auth import auth as auth_blueprint
