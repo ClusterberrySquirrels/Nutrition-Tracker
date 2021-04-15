@@ -30,17 +30,20 @@ def test_profile_logged_in(test_client):
     
 def test_create_meal(test_client):
     response = test_client.get('/profile/meal')
-    assert b"Enter a meal" in response.data
+    assert b"Search for foods" in response.data
     
-def test_create_meal_post(test_client):
-    response = test_client.post('/profile/meal', data=dict(
-    name = "TestMeal1",
-        calories = 100,
-        carbs = 10,
-        fat = 10,
-        protein = 20,
-        creation_date=datetime.now()), follow_redirects=True)
-    assert b"TestMeal1" in response.data
+#def test_create_meal_post(test_client):
+#    response = test_client.post('/profile/meal', data=dict(
+#        food = "Big Mac",
+#        amount = 100))
+#   assert b"Big Mac" in response.data
+    
+#def test_search_foods(test_client):
+#    response = test_client.get('/profile/meals/foods/<foods>/<amount>', foods = {"name": foods['description'], "brand": "", "id": foods['fdcId']}, amount = 2)
+#    assert b"School Lunch, pizza, BIG DADDY" in response.data
+    
+#def test_search_foods_post(test_client):
+    
     
     
 def test_logout(test_client):
