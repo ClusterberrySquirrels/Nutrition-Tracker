@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<form method="post">
+    <div class="container">
+        <h1>Choose your food</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Brand</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for food in foods %}
+                            <tr>
+                                <td>{{ food['name'] }}</td>
+                                <td>{{ food['brand'] }}</td>
+                                <td><button class="btn btn-primary" type="submit" name="submitFood" value="{{ food.id }}" style="padding-top: 6px;padding-bottom: 6px;">+</button></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endif %}
+{% endblock %}
