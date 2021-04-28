@@ -6,6 +6,7 @@ Flask-Bootstrap
 Flask-Moment
 Flask-WTF
 Flask-Testing
+Flask-Migrate
 pytest
 pytest-cov
 pip
