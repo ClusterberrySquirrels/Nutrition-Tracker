@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Registration-Form-with-Photo.css') }}">
+{% endblock %}
+
 {% block content %}
     <section class="register-photo">
         <div class="form-container">
