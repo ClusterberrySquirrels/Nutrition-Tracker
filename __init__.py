@@ -26,6 +26,7 @@ from flask_login import (
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 #from flask_wtf import FlaskForm
 #from wtforms import StringField, SubmitField, BooleanField, PasswordField, validators
 #from wtforms.validators import DataRequired
@@ -50,6 +51,7 @@ def create_app():
     moment = Moment(app)
     bootstrap = Bootstrap(app)
     db = SQLAlchemy(app)
+    migrate = Migrate(app, db)
 
     # setup Flask-Login, initialize db
     db.init_app(app)

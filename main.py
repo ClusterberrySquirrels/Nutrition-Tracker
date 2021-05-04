@@ -19,10 +19,14 @@ def index():
 def about():
     return render_template('about.html')
 
-@main.route('/profile')
+@main.route('/profile', methods=["GET", "POST"])
 @login_required
 def profile():
     meals = current_user.show_meals().all()
+    if request.form.get("deleteMeal"):
+        Meal.query.filter_by(id=request.form['deleteMeal']).delete()
+        db.session.commit()
+        meals = current_user.show_meals().all()
     return render_template('profile.html', name=current_user.name, meals=meals)
 
 @main.route('/profile/meal')
@@ -88,6 +92,7 @@ def search_foods_post(foods, amount):
     food = Meal(
         name = foodData['description'],
         brand = brand,
+        amount = round(amount, 2),
         calories = round(calories, 2),
         fat = round(fat, 2),
         carbs = round(carbs, 2),

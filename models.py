@@ -17,6 +17,7 @@ class Meal(db.Model):
     creation_date = db.Column(db.DateTime, nullable=False)
     name = db.Column(db.String(1000), nullable=False)
     brand = db.Column(db.String(1000))
+    amount = db.Column(db.Float)
     calories = db.Column(db.Float)
     carbs = db.Column(db.Float)
     fat = db.Column(db.Float)

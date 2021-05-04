@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login-Form-Clean.css') }}">
+{% endblock %}
+
 {% block content %}
     <section class="login-clean">
         <form method="POST" action="/login">
